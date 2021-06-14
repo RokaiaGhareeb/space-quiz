@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title>Space Quiz - Score</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            background: url("source.gif");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+        }
+
+        @font-face {
+            font-family: spacFont;
+            src: url(../Assets/AstroSpace-eZ2Bg.ttf);
+        }
+        .differ {
+            font-size: 50px;
+            color: rgb(211, 239, 251);
+            text-shadow: 2px 2px 4px #000000;
+            background: none;
+            font-family: 'spacFont';
+            width: 500px;
+            height: 100px;
+            text-align: center;
+            position: absolute;
+            top: 150px;
+            left: 20px;
+        }
+        .score{
+            font-size: 90px;
+            color: rgb(211, 239, 251);
+            text-shadow: 2px 2px 4px black;
+            background: none;
+            font-family: 'spacFont';
+            margin: 15px;
+        }
+        .score2{
+            font-size: 50px;
+            color: rgb(211, 239, 251);
+            text-shadow: 2px 2px 4px black;
+            background: none;
+            font-family: 'spacFont';
+            margin: 15px;
+        }
+        
+        .divscore{
+            position: absolute;
+            top: 250px;
+            right: 20px;
+            background: none;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            justify-content: center;
+            width: 600px;
+            height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+        <div id="startText" class ="differ"></div>
+        <div class="divscore">
+            <div class="score2">Your Score</div>
+            <div id="score" class="score"></div>
+        </div>
+    <script>
+        /// to get cookie name and score///    
+        function getCookie(cookieName) {
+            if (arguments.length == 0) {
+                throw ("You should Enter Cookie Name");
+            }
+            var cName = cookieName + "=";
+            var arr = document.cookie.split(';');
+            for (var i = 0; i < arr.length; i++) {
+                var temp = arr[i].trim();
+                if (temp.indexOf(cName) == 0)
+                    return temp.substring(cName.length, temp.length);
+            }
+            throw ("Enter Valid Cookies Name")
+        }
+        var score = getCookie("score");
+        var fname = getCookie("fname");
+        var lname = getCookie("lname");
+        document.getElementById("score").innerHTML = score;
+        var i = 0;
+        var txt = document.getElementById("startText");
+        msg = " Welcome "+ fname + " " + lname + " To Earth. Your Mission has finished, Are a you winner?";
+        var intrvl = setInterval(function () {
+            if (i < msg.length) {
+                txt.append(document.createTextNode(msg[i]));
+                i++;
+            } else {
+                i = 0;
+                txt.innerHTML = "";
+            }
+        }, 300);
+        var x = setInterval(function () {
+            if (document.getElementById("score").className == "score")
+                document.getElementById("score").className = "score2";
+            else
+                document.getElementById("score").className = "score";
+        }, 500);
+    </script>
+</body>
+
+</html>

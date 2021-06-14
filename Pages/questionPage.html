@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../Css/signandques.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="start()">
+    <div id="parentQ">
+        <div id="question">
+            <span id="quesID" class="quesTitle"></span>
+            <ul  style="background-color: transparent;">
+                <li style="background-color: transparent; list-style-type:none">
+                    <input  onclick="getAns()" id="ans1" type="radio" name="ans" class="radioBtn">
+                    <label  for="ans1" class="quesAns"></label>
+                </li>
+                <li style="background-color: transparent; list-style-type:none">
+                    <input onclick="getAns()" id="ans2" type="radio" name="ans" class="radioBtn">
+                    <label  for="ans2" class="quesAns"></label>
+                </li>
+                <li style="background-color: transparent; list-style-type:none">
+                    <input onclick="getAns()" id="ans3" type="radio" name="ans" class="radioBtn">
+                    <label  for="ans3" class="quesAns"></label>
+                </li>
+                <li style="background-color: transparent; list-style-type:none">
+                    <input onclick="getAns()"  id="ans4" type="radio" name="ans" class="radioBtn">
+                    <label for="ans4" class="quesAns"></label>
+                </li>
+            </ul>
+            <div id="swipbtns">
+                <i id="prevbtn" onclick="prev()"
+                    style="display: none; background-color: transparent; font-size: 60px; margin: 20px; color: rgb(8,31,53);"
+                    class="fa fa-caret-left"></i>
+                <div id="qno"></div>
+                <i id="nextbtn" onclick="next()"
+                    style="background-color: transparent; font-size: 60px; margin: 20px; color: rgb(8,31,53);"
+                    class="fa fa-caret-right"></i>
+            </div>
+            <div style="width: 500px; display: flex; justify-content: flex-end; background-color: transparent;">
+                <button id="markBtn" onclick="addToMarked()">Mark</button>
+            </div>
+        </div>
+        <div id="marked">
+        </div>
+        <button id="sumbit" onclick="sumbit()">Submit</button>
+        <img id="timerRockect" src="../Assets/486c34cf5b3b4badd52bc427dbeb44a1-rocket-cartoon-by-vexels.png">
+        <div id="timer"></div>
+    </div>
+    <script src="../Js/questions.js"></script>
+</body>
+
+</html>

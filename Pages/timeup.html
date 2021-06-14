@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Space quiz - Time's Up</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        @font-face {
+            font-family: spacFont;
+            src: url(../Assets/AstroSpace-eZ2Bg.ttf);
+        }
+
+        #container {
+            width: 1000px;
+            height: 60px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        span {
+            font-size: 35px;
+            color: rgb(8, 31, 53);
+            font-weight: bold;
+            font-family: 'spacFont';
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .differ {
+            font-size: 50px;
+            color: rgb(211, 239, 251);
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .differ2 {
+            font-size: 30px;
+            color:  rgb(211, 239, 251);
+            text-shadow: 2px 2px 4px #000000;
+        }
+    </style>
+</head>
+
+<body >
+    <center>
+        <img height="500px" src="../Assets/gravity_drib2.gif" style="margin-bottom: 10px;">
+        <div id="container">
+            <span>
+                <span>Unfortunately, </span>
+                <span id="namee" class="differ"></span>
+                <span> Time </span>
+                <span>is Up.</span>
+            </span>
+            <span>Your Score</span>
+            <div>
+                <span class="differ2" id="score"></span>
+            </div>
+        </div>
+    </center>
+    <script>
+        /// to get cookie name and score///    
+        function getCookie(cookieName) {
+            if (arguments.length == 0) {
+                throw ("You should Enter Cookie Name");
+            }
+            var cName = cookieName + "=";
+            var arr = document.cookie.split(';');
+            for (var i = 0; i < arr.length; i++) {
+                var temp = arr[i].trim();
+                if (temp.indexOf(cName) == 0)
+                    return temp.substring(cName.length, temp.length);
+            }
+            throw ("Enter Valid Cookies Name")
+        }
+        var score = getCookie("score");
+        var fname = getCookie("fname");
+        var lname = getCookie("lname");
+        document.getElementById("namee").innerHTML = fname + " " + lname;
+        document.getElementById("score").innerHTML = score + "  ";
+
+        var x = setInterval(function () {
+            if (document.getElementById("score").className == "differ2")
+                document.getElementById("score").className = "differ";
+            else
+                document.getElementById("score").className = "differ2";
+        }, 500);
+    </script>
+</body>
+
+</html>

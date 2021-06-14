@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title>Space Quiz - Registration</title>
+    <link rel="stylesheet" href="../Css/signandques.css">
+    <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="parentRegist">
+        <div id="welcomeside">
+            <img id="welcomeimg" src="../Assets/15-155660_minimalist-astronaut-art-hd-png-download.png">
+            <div id=welcometext>
+                <div class="bluespan">Welcome</div>
+                <span class="lightbluespan"> To Your </span>
+                <span class="bluespan">Space</span>
+                <span class="lightbluespan">Mission</span>
+            </div>
+        </div>
+        <div id="formside">
+            <input id="fname" type="text" placeholder="First name" class="forminput">
+            <span id="fnamespan" class="warningspan">Should be letters only.</span>
+            <div id="fnamedivalt"  class="altarntiveDivTospan"></div>
+            <br>
+            <input id="lname" type="text" placeholder="Last name" class="forminput">
+            <span id="lnamespan" class="warningspan">Should be letters only.</span>
+            <div id="lnamedivalt"  class="altarntiveDivTospan"></div>
+            <br>
+            <input id="email" type="text" placeholder="Email" class="forminput">
+            <i style="position: absolute; background-color: transparent; color: rgb(28, 50, 63); font-size : 15px; right: 100px;"
+                class="fa fa-envelope"></i>
+            <span id="emailspan" class="warningspan">Should be in form of example@exam.ex .</span>
+            <div id="emaildivalt" class="altarntiveDivTospan"></div>
+            <br>
+            <input id="password" type="password" placeholder="Password" class="forminput">
+            <i style="position: absolute; background-color: transparent; color: rgb(28, 50, 63); font-size : 20px; right: 100px;"
+                class="fa fa-lock"></i>
+            <span id="passwordspan" class="warningspan">Should be more than or equal 8 char.</span>
+            <div id="passdivalt" class="altarntiveDivTospan"></div>
+            <br>
+            <input id="repassword" type="password" placeholder="Re-enter Password" class="forminput">
+            <span id="repasspan" class="warningspan">Should be identical to entered password.</span>
+            <div id="repassdivalt" class="altarntiveDivTospan"></div>
+            <span onclick="validate()">
+                <span id="signText">Sign Up</span>
+                <img id="go" src="../Assets/rocket-icon.png">
+            </span>
+        </div>
+    </div>
+    <script src="../Js/registrationValidation.js"></script>
+</body>
+
+</html>
